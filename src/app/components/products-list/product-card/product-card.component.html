@@ -1,0 +1,28 @@
+<div class="card" style="min-height: 550px; cursor:pointer;" (click)="onSelectingProduct()">
+    <img [src]="product.image_list[0] ? product.image_list[0].file : '../../assets/No_image_available.jpg'" class="card-img-top" alt="No Image for Now">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <h5 class="card-title">{{ product.name }}</h5>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <p class="card-text">{{ product.description | truncate:100 }}</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Price: {{ product.price_in_inr_with_tax | inr }}</p>
+        </div>
+      </div>
+      
+      <div class="row align-items-end">
+        <div class="col">
+          <a class="btn btn-primary btn-block">Buy Now</a>
+        </div>
+      </div>
+    </div>
+</div>

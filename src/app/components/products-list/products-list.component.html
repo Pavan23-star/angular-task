@@ -1,0 +1,20 @@
+<div class="container custom-padding" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-s-6 col-xs-6 col-sm-6 col-md-4 col-lg-3" *ngFor="let card of productsList">
+            <app-product-card [product]=card></app-product-card>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <ngb-pagination [collectionSize]="paginationHelper.count" 
+            [(page)]="paginationHelper.page" 
+            aria-label="Default pagination"
+            [pageSize]="paginationHelper.pageSize"
+            [maxSize]="5"
+            class="d-flex justify-content-center"
+            [boundaryLinks]="true"
+            (pageChange)="onPageChange($event)" *ngIf="paginationHelper.count > 0">
+        </ngb-pagination>
+    </div>
+    
+</div>

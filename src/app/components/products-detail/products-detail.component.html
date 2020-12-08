@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img [src]="productDetails.image_list[0] ? productDetails.image_list[0].file : '../../assets/No_image_available.jpg'" alt="" class="img-fluid">
+        </div>
+        <div class="col-6">
+            <h2>{{ productDetails.name }}</h2>
+            <div>
+                Price: <span>{{ productDetails.price_in_inr_with_tax | inr }}</span>
+            </div>
+            <hr>
+            <div *ngIf="productDetails.description">
+                <span style="font-weight: bold;">About: </span> {{ productDetails.description }}
+                <hr>
+            </div>
+            
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 col-md-auto col-xl-auto col-lg-auto">
+                    <button class="btn btn-success">
+                        Buy Now
+                    </button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 col-md-auto col-xl-auto col-lg-auto">
+                    <button class="btn btn-primary">
+                        Add to Favorites
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
